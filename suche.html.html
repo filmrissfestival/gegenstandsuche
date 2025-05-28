@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Öffi suchen</title>
+</head>
+<body>
+  <h3>Öffi suchen</h3>
+  <input type="text" id="query" placeholder="z. B. Hammer">
+  <button onclick="search()">Suchen</button>
+  <pre id="result"></pre>
+
+  <script>
+    function search() {
+      const query = document.getElementById("query").value;
+      const url = "https://script.google.com/macros/s/AKfycbwpRn7oXYdHPwynr7XTuuLuifOg-nW__-fKxnvzYulf2gpI-ATl1VfS9Jh4XU24bM1P/exec"
+      
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("result").textContent = data.map(row => row[0]).join("\n");
+        })
+        .catch(err => {
+          document.getElementById("result").textContent = "Fehler: " + err;
+        });
+    }
+  </script>
+</body>
+</html>
