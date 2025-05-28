@@ -13,7 +13,7 @@
   <script>
     function search() {
       const query = document.getElementById("query").value;
-      const url = "https://docs.google.com/spreadsheets/d/1GZWViH70bigYR8xgl6mY8XpDV_CYtaw2yTOJ1nHY1eY/edit?resourcekey=&gid=1197845599#gid=1197845599" + encodeURIComponent(query);
+      const url = "https://script.google.com/macros/s/AKfycbwpRn7oXYdHPwynr7XTuuLuifOg-nW__-fKxnvzYulf2gpI-ATl1VfS9Jh4XU24bM1P/exec" + encodeURIComponent(query);
       
       fetch(url)
         .then(response => response.json())
